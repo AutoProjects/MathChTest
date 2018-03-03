@@ -11,9 +11,9 @@ public class PreloadSigningAlias
 
     static PreloadSigningAlias()
     {
-        PlayerSettings.Android.keystorePass = "4jDuf2KtQMQa9XxC";
-        PlayerSettings.Android.keyaliasName = "papumba academy";
-        PlayerSettings.Android.keyaliasPass = "4jDuf2KtQMQa9XxC";
+        PlayerSettings.Android.keystorePass = "111111";
+        PlayerSettings.Android.keyaliasName = "math.alias";
+        PlayerSettings.Android.keyaliasPass = "111111";
     }
 
 }
@@ -37,7 +37,7 @@ class PerformBuild
 
 	static string GetBuildPath()
 	{
-		return "/../../build/iPhone";
+		return "/Users/jenkins/Documents/Math_build/iPhone";
 	}
 
 	[UnityEditor.MenuItem("CUSTOM/Test Command Line Build Step")]
@@ -62,7 +62,7 @@ class PerformBuild
 
     static string GetBuildPathAndroid()
 	{
-		return "/../build/android";
+		return "/Users/jenkins/Documents/Math_build/android";
 	}
 
 	[UnityEditor.MenuItem("CUSTOM/Test Command Line Build Step Android")]
