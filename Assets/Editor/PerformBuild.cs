@@ -20,6 +20,18 @@ public class PreloadSigningAlias
 
 class PerformBuild
 {
+static void CurrentVersion(){
+  PlayerSettings.bundleVersion = "0.5.0";
+  /*var currentVersion = typeof(UnityEditor.Ver).Assembly.GetName().Version;
+
+		PlayerSettings.bundleVersion = string.Format("{0}.{1}.{2}",
+      currentVersion.Major,
+			currentVersion.Minor,
+			currentVersion.Build);
+
+		PlayerSettings.iOS.buildNumber = currentVersion.Revision.ToString();
+		PlayerSettings.Android.bundleVersionCode = currentVersion.Revision;*/
+}
     static string[] GetBuildScenes()
 	{
 		List<string> names = new List<string>();
@@ -68,6 +80,7 @@ class PerformBuild
 	[UnityEditor.MenuItem("CUSTOM/Test Command Line Build Step Android")]
 	static void CommandLineBuildAndroid ()
 	{
+    CurrentVersion();
 		Debug.Log("Command line build android version\n------------------\n------------------");
 
 		string[] scenes = GetBuildScenes();
@@ -85,3 +98,15 @@ class PerformBuild
 		BuildPipeline.BuildPlayer(scenes, path, BuildTarget.Android, BuildOptions.None);
 	}
 }
+
+
+/*
+/Applications/Unity5.6.4/Unity.app/Contents/MacOS/Unity \
+-projectPath /Users/jenkins/Documents/MathCh \
+-quit \
+-batchmode \
+-logfile \
+-buildTarget android \
+-stackTraceLogType Full \
+-executeMethod PerformBuild.CommandLineBuildAndroid
+*/
