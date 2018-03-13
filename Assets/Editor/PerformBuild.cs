@@ -21,7 +21,7 @@ public class PreloadSigningAlias
 class PerformBuild
 {
 static void CurrentVersion(){
-  PlayerSettings.bundleVersion = "0.5.0";
+  PlayerSettings.bundleVersion = "0.5.0"; // delete after resolving Version issue
   /*var currentVersion = typeof(UnityEditor.Ver).Assembly.GetName().Version;
 
 		PlayerSettings.bundleVersion = string.Format("{0}.{1}.{2}",
@@ -55,6 +55,7 @@ static void CurrentVersion(){
 	[UnityEditor.MenuItem("CUSTOM/Test Command Line Build Step")]
 	static void CommandLineBuild ()
 	{
+    CurrentVersion();
 		Debug.Log("Command line build\n------------------\n------------------");
 
 		string[] scenes = GetBuildScenes();
