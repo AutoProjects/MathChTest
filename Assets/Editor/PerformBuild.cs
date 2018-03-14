@@ -55,7 +55,7 @@ static void CurrentVersion(){
 	[UnityEditor.MenuItem("CUSTOM/Test Command Line Build Step")]
 	static void CommandLineBuild ()
 	{
-    PlayerSettings.buildNumber = "2";
+    PlayerSettings.iOS.buildNumber = "2";
 		Debug.Log("Command line build\n------------------\n------------------");
 
 		string[] scenes = GetBuildScenes();
